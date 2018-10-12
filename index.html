@@ -31,7 +31,7 @@
             right: 0;
             top: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, .5);
+            background-color: rgba(0, 0, 0, .7);
             z-index: -1;
         }
 
@@ -50,6 +50,7 @@
         #text {
             position: relative;
             margin-left: .25em;
+            font-weight: 500;
         }
 
         #text::after {
@@ -60,7 +61,12 @@
             top: -5px;
             bottom: -5px;
             background-color: #fff;
-        } 
+            animation: blink 800ms ease-out infinite;
+        }
+
+        @keyframes blink {  
+            60% { opacity: 0; }
+        }
 
     </style>
 </head>
@@ -68,7 +74,7 @@
 
     <div id="container">
         <div id="textcontainer">
-            <h1>Gabor Szekely the<span id="text"></span></h1>
+            <h1>Gabor Szekely the<pre id="text"></pre></h1>
         </div>
     </div>
         

@@ -25,22 +25,14 @@ function typewriter() {
     
     const word = words[counter];
     const wordLength = word.length;
-    const letterArray = [];
+    const letterArray = word.split('');
     const wordBox = document.querySelector('#text');
 
-    var timeArray = [400, 500];
-    var spellSpeed = timeArray[Math.floor(Math.random() * timeArray.length)];
-    var deleteSpeed = 200;
-    var deleteDelay = 2000;
-    var iterationDelay = 3000;
-
-
-    // CREATE LETTER ARRAY
-    for (let i = 0; i < wordLength; i++) {
-        letterArray.push(word.charAt(i));
-    }
-
-    var finalLetter = letterArray[wordLength - 1];
+    const timeArray = [400, 500];
+    const spellSpeed = timeArray[Math.floor(Math.random() * timeArray.length)];
+    const deleteSpeed = 200;
+    const deleteDelay = 2000;
+    const iterationDelay = 3000;
 
     // SPELL OUT WORD FUNCTION
     function spell(x) {
@@ -64,7 +56,7 @@ function typewriter() {
             if (--y) { remove(y); }
             else {
                 setTimeout(() => {
-                    counter += 1;
+                    counter++;
                     typewriter();
                 }, iterationDelay);
             }
